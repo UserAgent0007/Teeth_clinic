@@ -1,7 +1,7 @@
 let button_reg = document.getElementById("complite_reg");
 let login_ = ""
 let password_ = ""
-let admin = "admin";
+let admin = "user";
 
 const apiUrl_reg = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/userRegister"
 
@@ -43,4 +43,8 @@ async function register ()
     .then(data => {
         console.log("User registered successfully:", data);
     })
+
+    .catch(error => {
+        console.error("Error during registration:", error);
+      });
 }
