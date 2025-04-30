@@ -40,17 +40,20 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <a id = "reg_close" href="#" class="closebtn">×</a>
+        <!-- Початок форми реєстрації -->
         <form class="form1" action="../index.html" class="form_">
+          <!-- Логін з ім'я та прізвища -->
           <div class="name_surname">
             <div class="name">
               <label for="name">Ім'я:</label>
               <p class="nomargin"><input id="name" type="text" placeholder="Ім'я" required="required"></p>
             </div>
-            <div class="name">
+            <!-- <div class="name">
               <label for="surname">Прізвище: </label>
               <p class="nomargin"><input id="surname" type="text" placeholder="Прізвище" required="required"></p>
-            </div>
+            </div> -->
           </div>
+          <!-- Поля для реєстрації (пароль) -->
           <fieldset>
             <legend>Пароль, телефон, email</legend>
             <div>
@@ -62,6 +65,7 @@
               <p class="nomargin"> <input id="email_" type="email" placeholder="адреса" required="required"></p>
             </div>
           </fieldset>
+
           <div class="radio">
             <p>
 
@@ -73,9 +77,10 @@
               <label for="sex">Жінка</label>
             </p>
           </div>
-          <p><input type="submit" value="Надіслати"> </p>
+          <p><button id = "complite_reg">зареєструватися</button> </p>
 
         </form>
+        <!-- Кінець форми реєстрації -->
       </div>
     </div>
   </div>
@@ -435,7 +440,7 @@
 
   <script src="script/index.js"></script>
   
-
+  <script src="script/register.js"></script>
 
 </body>
 
