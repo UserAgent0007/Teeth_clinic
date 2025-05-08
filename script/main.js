@@ -2,21 +2,50 @@ let bod = document.body;
 
 async function getData() {
     // const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/listItems";
-    const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/listItems?category=teeth"
+    // const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/listItems?category=teeth"
     
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-  
-      const json = await response.json();
-      console.log(json);
-      let items = json.filter(item => item.category && item.category == "teeth");
-      loadItems(items);
-    } catch (error) {
-      console.error(error.message);
+    const jwtToken = localStorage.getItem("token"); // token that you retrieve upon login
+    const apiUrl = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/userGetItems";
+
+    const response = fetch(apiUrl, {
+    method: "GET", // or POST for the userCreateItem endpoint
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${jwtToken}`
     }
+    })
+
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Data received:", data);
+        let items = data.filter(item => item.category && item.category == "teeth");
+        loadItems(items);
+        // return data;
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
+    
+    // try {
+    //   const response = await fetch(url);
+    //   if (!response.ok) {
+    //     throw new Error(`Response status: ${response.status}`);
+    //   }
+  
+    //   const json = await response.json();
+    // const json = response.json()
+
+    // console.log(json);
+    // let items = json.filter(item => item.category && item.category == "teeth");
+    // loadItems(items);
+    // } catch (error) {
+    //   console.error(error.message);
+    // }
   }
 
   async function postData(item){
