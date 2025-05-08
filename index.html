@@ -41,37 +41,31 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <a id = "reg_close" href="#" class="closebtn">×</a>
-        <!-- Початок форми реєстрації -->
-        <form class="form1" action="../index.html" class="form_">
-          <!-- Логін з ім'я та прізвища -->
+        
+        
+     
           <div class="name_surname">
             <div class="name">
               <label for="name">Ім'я:</label>
               <p class="nomargin"><input id="name" type="text" placeholder="Ім'я" required="required"></p>
             </div>
-            <!-- <div class="name">
-              <label for="surname">Прізвище: </label>
-              <p class="nomargin"><input id="surname" type="text" placeholder="Прізвище" required="required"></p>
-            </div> -->
+            
           </div>
-          <!-- Поля для реєстрації (пароль) -->
-          <fieldset>
-            <legend>Пароль, телефон, email</legend>
-            <div>
+         
+          <div>
               <label for="passw">Пароль:</label>
               <p class="nomargin"><input id="passw" type="password" placeholder="пароль" required="required" /></p>
               <label for="telephone">Телефон:</label>
               <p class="nomargin"> <input id="telephone" type="tel" placeholder="телефон" required="required" /></p>
               <label for="email_">email:</label>
               <p class="nomargin"> <input id="email_" type="email" placeholder="адреса" required="required"></p>
-            </div>
-          </fieldset>
+          </div>
+          
 
           
-          <p><button id = "complite_reg">зареєструватися</button> </p>
+          <p><button type="submit" id = "complite_reg">зареєструватися</button> </p>
 
-        </form>
-        <!-- Кінець форми реєстрації -->
+        
       </div>
     </div>
   </div>
@@ -80,25 +74,23 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <a id = "reg_close" href="#" class="closebtn">×</a>
-        <!-- Початок форми реєстрації -->
-        <form class="form1" action="../index.html" class="form_">
+        
+        
 
-          <!-- Поля для реєстрації (пароль) -->
-          <fieldset>
-            <legend>Логін, пароль</legend>
+          
             <div>
               <label for="name_log">Ім'я:</label>
               <p class="nomargin"><input id="name_log" type="text" placeholder="Ім'я" required="required"></p>
               <label for="passw_log">Пароль:</label>
               <p class="nomargin"><input id="passw_log" type="password" placeholder="пароль" required="required" /></p>
             </div>
-          </fieldset>
+          
 
           
-          <p><button id = "complite_log">Логін</button> </p>
+          <p><button type="submit" onclick="testFunction()" id = "complite_log">Логін</button> </p>
 
         </form>
-        <!-- Кінець форми реєстрації -->
+        
       </div>
     </div>
   </div>
@@ -458,9 +450,9 @@
 
   <script src="script/index.js"></script>
   
-  <!-- <script src="script/register.js"></script> -->
+  <script src="script/register.js"></script>
 
-  <sctipt src="script/login.js"></sctipt>
+  <script src="./script/login.js"></script>
 
 </body>
 

@@ -1,7 +1,7 @@
 let bod = document.body;
 
 let reg_button = document.getElementById("reg");
-let login_button = document.getElementById("login");
+let login_button = document.getElementById("log");
 
 let close_reg = document.getElementById("reg_close");
 let close_log = document.getElementById("log_close")

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="../CSS/products.css">
 <link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="../CSS/add_css_to_button.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
@@ -149,6 +150,7 @@
     <section class="search_section">
       <h1 class="title_prod">Товари</h1>
       <div class="filter">
+
         <input id="search" type="range" min="0" max="100" value="100" oninput="show_with_filter(this.value)">
         <span id="prices">100</span>
 
@@ -157,7 +159,7 @@
 
 
 
-    <button id="add_option" style="margin-bottom: 1em;">добавити продукт</button>
+    <button id="add_option" class="add_no_show" style="margin-bottom: 1em;">добавити продукт</button> 
 
     <div class="modal-window_js" id="modal2">
       <div class="content_advert">
@@ -257,6 +259,7 @@
   </footer>
   
   <script src="../script/main.js"></script>
+  <script src="../script/show_button.js"></script>
   
 </body>
 

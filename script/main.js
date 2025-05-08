@@ -3,6 +3,7 @@ let bod = document.body;
 async function getData() {
     // const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/listItems";
     const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/listItems?category=teeth"
+    
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -19,15 +20,49 @@ async function getData() {
   }
 
   async function postData(item){
-    const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/postItem";
-    try{
-        const response = await fetch(url, {
-            method: "POST",
-            body: JSON.stringify(item),
-          }).then(() => getData());
-    } catch (error){
-      console.error(error.message);
+    // const url = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/postItem";
+    const apiUrl = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/userCreateItem"
+    
+
+    if (localStorage.getItem("role") != "admin")
+    {
+        return;
     }
+
+    const jwtToken = localStorage.getItem("token"); //token that you retrieve upon login
+    
+    // const apiUrl = "https://chnu-student-interview-preparation.netlify.app/.netlify/functions/userGetItems";
+
+    let resp = fetch(apiUrl, {
+    method: "POST", // or POST for the userCreateItem endpoint
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${jwtToken}`
+    },
+    body: JSON.stringify(item)
+    })
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Data received:", data);
+        alert("everything OKKKKKKKK")
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
+
+    // try{
+    //     const response = await fetch(url, {
+    //         method: "POST",
+    //         body: JSON.stringify(item),
+    //       }).then(() => getData());
+    // } catch (error){
+    //   console.error(error.message);
+    // }
   }
 
 async function submitItem(){
